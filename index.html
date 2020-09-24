@@ -46,6 +46,7 @@
       } else if (diceRoll > 12) {
         alert("We've escaped!");
         alert("Let's go on our way.");
+        dice();
       }
     }
 
@@ -59,7 +60,8 @@
           alert("Game Over");
         } else if (diceRoll > 10) {
           alert("They're running away!");
-          alert("Let's et out of here.");
+          alert("Let's get out of here.");
+          dice();
         }
       } else if (fight === false) {
         run();
@@ -76,12 +78,14 @@
           alert("Game Over");
         } else if (diceRoll > 6 && diceRoll <= 12) {
           badlyWounded();
-        } else if (diceroll > 12 && diceRoll <= 19) {
+        } else if (diceRoll > 12 && diceRoll <= 19) {
           alert("They're running away!");
           alert("Let's get out of here.");
+          dice();
         } else if (diceRoll = 20) {
           alert("Wow! We've killed all of them! You're ... quite a fighter....");
           alert("Let's get out of here.");
+          dice();
         }
       } else if (fight === false) {
         run();
@@ -103,9 +107,11 @@
         } else if (diceRoll >= 17 && diceRoll < 20) {
           alert("They're running away!");
           alert("Let's get out of here.");
+          dice();
         } else if (diceRoll = 20) {
           alert("Wow! We've killed all of them! You're ... quite a fighter....");
           alert("Let's get out of here.");
+          dice();
         }
       } else if (fight === false) {
         run();
@@ -125,6 +131,7 @@
       } else if (diceRoll > 12) {
         alert("Our directions are correct.");
         alert("Congratulations! We have arrived safely.");
+        dice();
       }
     }
 
@@ -146,10 +153,8 @@
         } else if (diceRoll > 2 && diceRoll <= 10) {
           alert("Oh, no! We've been ambushed by bandits!");
           fightNow();
-          dice();
         } else if (diceRoll > 10 && diceRoll <= 15) {
           lostTrav();
-          dice();
         } else if (diceRoll > 15) {
           alert("Congratulations! We have arrived safely in Cervania.");
           merchant = confirm("Look! There's a merchant! Shall we approach him?");
@@ -170,7 +175,6 @@
                   alert("I think that one has an axe....");
                   alert("And those guys definitely have clubs.");
                   fightNow();
-                  dice();
                 } else if (diceRoll > 6 && diceRoll <= 12) {
                   alert("Hey! There he is! Catch him!");
                   alert("Got him! Give us our stuff back!");
@@ -212,6 +216,11 @@
                   alert("The merchant takes us on as his apprentices.");
                   alert("We make a respectable living well into our golden years.");
                   alert("Game Over");
+                } else if (diceRoll > 15) {
+                  alert("The merchant lost his children to cholera.");
+                  alert("He adopts us and teaches us his trade.");
+                  alert("We become very wealthy, take spouses, and live to a ripe old age.");
+                  alert("Game Over");
                 }
               } else if (drinks === false) {
                 alert("Thank you, but we'll pass.");
@@ -239,7 +248,7 @@
       } else if (direction === "east") {
         dice();
         if (diceRoll < 4) {
-          alert("We were caught in a massive grassfire and died.");
+          alert("You got bit by a snake and died.");
           alert("Game Over");
         } else if (diceRoll >= 4 && diceRoll < 11) {
           alert("Oh, no! We've been attacked by wolves!");
@@ -250,7 +259,7 @@
           lostTrav();
 
         } else if (diceRoll >= 16) {
-          alert("There are ruins in the distance. Investigate?")
+          alert("There are ruins in the distance. Should we investigate?")
 
 
 
@@ -274,7 +283,7 @@
           lostTrav();
 
         } else if (diceRoll >= 16) {
-          alert("In the distance, you see a village. Investigate?")
+          alert("In the distance, you see a village. Should we investigate?")
 
 
 
