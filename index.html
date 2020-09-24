@@ -9,18 +9,28 @@
 
 <body>
   <script type="text/javascript">
-    
+
 
     // variables
+
     var diceRoll = 1;
     var lost = true;
     var fight = true;
+    var merchant = true;
+    var thief = true;
+    var guild = true;
+    var drinks = true;
+    var courtesan = true;
+
+
 
 
     // functions
+
     function dice() {
       diceRoll = Math.floor(Math.random() * 20) + 1;
       console.log(diceRoll);
+      alert("You've rolled " + diceRoll);
       return diceRoll;
     }
 
@@ -28,48 +38,52 @@
     function run() {
       dice();
       if (diceRoll <= 5) {
-        alert("We have died.");
+        alert("We've been killed.");
+        alert("Game Over");
       } else if (diceroll > 5 && diceRoll <= 12) {
-        alert("We are wounded.");
+        alert("We're wounded.");
         run();
       } else if (diceRoll > 12) {
-        alert("We have escaped!");
-        alert("We continue on our way.");
+        alert("We've escaped!");
+        alert("Let's go on our way.");
       }
     }
 
 
     function badlyWounded() {
-      fight = confirm("We are badly wounded. Click 'OK' to continue fighting or 'Cancel' to run");
-      if(fight === true) {
+      fight = confirm("We're badly wounded. Should we continue fighting? Click 'OK' to continue fighting or 'Cancel' to run");
+      if (fight === true) {
         dice();
-        if(diceRoll <= 10) {
-          alert("We have been killed.");
+        if (diceRoll <= 10) {
+          alert("We've been killed.");
           alert("Game Over");
-        } else if(diceRoll > 10) {
-          alert("We have defeated the enemy!")
-          alert("We continue on our way.")
+        } else if (diceRoll > 10) {
+          alert("They're running away!");
+          alert("Let's et out of here.");
         }
-      } else if(fight === false) {
+      } else if (fight === false) {
         run();
       }
     }
 
 
     function lightlyWounded() {
-      fight = confirm("We are lightly wounded. Click 'OK' to continue fighting or 'Cancel' to run");
-      if(fight === true) {
+      fight = confirm("We're lightly wounded. Should we continue fighting? Click 'OK' to continue fighting or 'Cancel' to run");
+      if (fight === true) {
         dice();
-        if(diceRoll <= 6) {
-          alert("We have been killed.");
+        if (diceRoll <= 6) {
+          alert("We've been killed.");
           alert("Game Over");
-        } else if(diceRoll > 6 && diceRoll <= 12) {
+        } else if (diceRoll > 6 && diceRoll <= 12) {
           badlyWounded();
-        } else if (diceroll > 12) {
-          alert("We have defeated the enemy!")
-          alert("We continue on our way.")
+        } else if (diceroll > 12 && diceRoll <= 19) {
+          alert("They're running away!");
+          alert("Let's get out of here.");
+        } else if (diceRoll = 20) {
+          alert("Wow! We've killed all of them! You're ... quite a fighter....");
+          alert("Let's get out of here.");
         }
-      } else if(fight === false) {
+      } else if (fight === false) {
         run();
       }
     }
@@ -77,18 +91,21 @@
 
     function fightNow() {
       fight = confirm("Fight or run? Click 'OK' to fight or 'Cancel' to run.");
-      if(fight === true) {
+      if (fight === true) {
         dice();
-        if(diceRoll < 3) {
-          alert("We have been killed.");
+        if (diceRoll < 3) {
+          alert("We've been killed.");
           alert("Game Over");
-        } else if(diceRoll >= 3 && diceRoll < 10) {
+        } else if (diceRoll >= 3 && diceRoll < 10) {
           badlyWounded();
-        } else if (diceRoll >= 11 && diceRoll < 18) {
+        } else if (diceRoll >= 11 && diceRoll < 17) {
           lightlyWounded();
-        } else if(diceRoll >= 18) {
-          alert("We have defeated the enemy!")
-          alert("We continue on our way.")
+        } else if (diceRoll >= 17 && diceRoll < 20) {
+          alert("They're running away!");
+          alert("Let's get out of here.");
+        } else if (diceRoll = 20) {
+          alert("Wow! We've killed all of them! You're ... quite a fighter....");
+          alert("Let's get out of here.");
         }
       } else if (fight === false) {
         run();
@@ -99,15 +116,15 @@
     function lostTrav() {
       lost = confirm("We're lost! Ask someone for directions?");
       dice();
-      if(diceRoll <= 6) {
-        alert("You have been directed into an ambush!");
+      if (diceRoll <= 6) {
+        alert("We've been directed into an ambush!");
         fightNow();
-      } else if(diceRoll > 6 && diceRoll <= 12) {
-        alert("Your directions were unclear.");
+      } else if (diceRoll > 6 && diceRoll <= 12) {
+        alert("The directions were unclear.");
         lostTrav();
-      } else if(diceRoll > 12) {
-        alert("Your directions are correct.");
-        alert("Congratulations! You have arrived safely.");
+      } else if (diceRoll > 12) {
+        alert("Our directions are correct.");
+        alert("Congratulations! We have arrived safely.");
       }
     }
 
@@ -120,85 +137,171 @@
     var join = confirm("Hello, " + playerName + "! I'm going on an adventure! Will you join me?");
 
     if (join === true) {
-      var direction = prompt("Where shall we go? To the South is the great city of Sarvania. To the East is the Great Grassland. To the North is a the Vast, Frozen Waste. To the West is the Shining Sea. Please type 'south', 'east', 'north', or 'west'.")
+      var direction = prompt("Where shall we go? To the South is the great city of Cervania. To the East is the Great Grassland. To the North is a the Vast, Frozen Waste. To the West is the Shining Sea. Please type 'south', 'east', 'north', or 'west'.")
       if (direction === "south") {
-        dice(); {
-          if (diceRoll <= 10) {
-            alert("Oh, no! We've been ambushed by bandits!");
-            fightNow();
+        dice();
+        if (diceRoll <= 2) {
+          alert("The entire party has contracted cholera and died.");
+          alert("Game Over");
+        } else if (diceRoll > 2 && diceRoll <= 10) {
+          alert("Oh, no! We've been ambushed by bandits!");
+          fightNow();
+          dice();
+        } else if (diceRoll > 10 && diceRoll <= 15) {
+          lostTrav();
+          dice();
+        } else if (diceRoll > 15) {
+          alert("Congratulations! We have arrived safely in Cervania.");
+          merchant = confirm("Look! There's a merchant! Shall we approach him?");
+          if (merchant === true) {
             dice();
-          } else if (diceRoll > 10 && diceRoll <= 15) {
-            lostTrav();
-            dice();
-          } else if (diceRoll > 15) {
-            alert("Congratulations! You have arrived safely.")
-
-
-
-
-
+            if (diceRoll < 3) {
+              alert("Whoops! He was a murderer. He killed you!");
+              alert("Game Over");
+            } else if (diceRoll >= 3 && diceRoll < 12) {
+              alert("He was a thief! He stole all of our stuff!");
+              thief = confirm("Should we go after him?");
+              if (thief === true) {
+                alert("Stop! Thief!");
+                dice();
+                if (diceRoll <= 6) {
+                  alert("Uh-oh. He's got friends. Uh.");
+                  alert("Do they have KNIVES???");
+                  alert("I think that one has an axe....");
+                  alert("And those guys definitely have clubs.");
+                  fightNow();
+                  dice();
+                } else if (diceRoll > 6 && diceRoll <= 12) {
+                  alert("Hey! There he is! Catch him!");
+                  alert("Got him! Give us our stuff back!");
+                  alert("... a member of the Thieves' Guild? Why would we do that?");
+                  guild = confirm("What do you think? Should we join the Thieves' Guild?")
+                  if (guild === true) {
+                    alert("Well, okay.");
+                    alert("We join the Thieves' Guild.");
+                    alert("We become very good thieves and get rich.");
+                    alert("Game Over");
+                  } else if (guild === false) {
+                    alert("Join the Thieves' Guild? Do we look like criminals to you?");
+                    alert("Give us our stuff.");
+                    alert("Oh, look. There's a Watchman.");
+                    alert("The watchman arrests the thief and invites us to join the Watch.");
+                    alert("We join the City Watch. There's not much money in it, but there's great satisfaction in keeping the public safe.");
+                    alert("We become well-respected members of the Watch and spend the rest of our lives as Watchmen.");
+                    alert("Game Over");
+                  }
+                } else if (diceRoll >= 12) {
+                  alert("Oh, look. There's a Watchman.");
+                  alert("The watchman arrests the thief and invites us to join the Watch.");
+                  alert("We join the City Watch. There's not much money in it, but there's great satisfaction in keeping the public safe.");
+                  alert("We become well-respected members of the Watch and spend the rest of our lives as Watchmen.");
+                  alert("Game Over");
+                }
+              } else if (thief === false) {
+                alert("We can't make our way in the city without our stuff. We have to become beggars and die in poverty.");
+                alert("Game Over");
+              }
+            } else if (diceRoll >= 12 && diceRoll < 20) {
+              alert("He offers to buy us drinks and give us some tips. Should we join him?");
+              if (drinks === true) {
+                dice();
+                if (diceRoll <= 5) {
+                  alert("Whoops! He poisoned our drinks and we died.");
+                  alert("Game Over");
+                } else if (diceRoll > 5 && diceRoll <= 15) {
+                  alert("The merchant takes us on as his apprentices.");
+                  alert("We make a respectable living well into our golden years.");
+                  alert("Game Over");
+                }
+              } else if (drinks === false) {
+                alert("Thank you, but we'll pass.");
+                alert("We proceed to get lost in the city.");
+                alert("That night, you fall down an open sewer grate and break your neck. You die.");
+                alert("Game Over");
+              }
+            } else if (diceRoll = 20) {
+              alert("The merchant lost his children to cholera.");
+              alert("He adopts us and teaches us his trade.");
+              alert("We become very wealthy, take spouses, and live to a ripe old age.");
+              alert("Game Over");
+            }
+          } else if (merchant === false) {
+            alert("No? Well, what about that nice lady over there?");
+            alert("What do you mean, she's a courtesan??? Um ... what's a courtesan?");
+            alert("Oh. Ummmmmmmmm. Er. Should we talk to her anyway? I bet she knows her way around.");
+            alert("No? You're sure?");
+            alert("Okay, then.");
+            alert("We proceed to get lost in the city.");
+            alert("That night, you fall down an open sewer grate and break your neck. You die.");
+            alert("Game Over");
           }
         }
       } else if (direction === "east") {
-        dice(); {
-          if (diceRoll < 11) {
-            alert("Oh, no! You've been attacked by wolves!");
-            fightNow();
+        dice();
+        if (diceRoll < 4) {
+          alert("We were caught in a massive grassfire and died.");
+          alert("Game Over");
+        } else if (diceRoll >= 4 && diceRoll < 11) {
+          alert("Oh, no! We've been attacked by wolves!");
+          fightNow();
 
 
-          } else if (diceRoll >= 11 && diceRoll < 16) {
-            lostTrav();
+        } else if (diceRoll >= 11 && diceRoll < 16) {
+          lostTrav();
 
-          } else if (diceRoll >= 16) {
-            alert("In the distance, you see ruins. Investigate?")
-
-
+        } else if (diceRoll >= 16) {
+          alert("There are ruins in the distance. Investigate?")
 
 
 
-          }
+
+
         }
 
       } else if (direction === "north") {
-        dice(); {
-          if (diceRoll < 11) {
-            alert("Oh, no! You've been attacked by a great white bear!");
-            fightNow();
+        dice();
+        if (diceRoll <= 5) {
+          alert("You fell and broke your leg.");
+          alert("To save the rest of the party, we had to leave you behind.");
+          alert("You died of exposure.");
+          alert("Game Over");
+        } else if (diceRoll > 5 && diceRoll <= 10) {
+          alert("Oh, no! We've been attacked by a great white bear!");
+          fightNow();
 
 
-          } else if (diceRoll >= 11 && diceRoll < 16) {
-            lostTrav();
+        } else if (diceRoll >= 11 && diceRoll < 16) {
+          lostTrav();
 
-          } else if (diceRoll >= 16) {
-            alert("In the distance, you see a village. Investigate?")
-
-
+        } else if (diceRoll >= 16) {
+          alert("In the distance, you see a village. Investigate?")
 
 
 
-          }
+
+
+
         }
 
 
 
       } else if (direction === "west") {
-        dice(); {
-          if (diceRoll < 11) {
-            alert("Oh, no! You've been ambushed by raiders!");
-            fightNow();
+        dice();
+        if (diceRoll < 11) {
+          alert("Oh, no! We've been ambushed by raiders!");
+          fightNow();
 
 
-          } else if (diceRoll >= 11 && diceRoll < 16) {
-            lostTrav();
+        } else if (diceRoll >= 11 && diceRoll < 16) {
+          lostTrav();
 
-          } else if (diceRoll >= 16) {
-            alert("Congratulations! You have arrived at the Shining Sea. Sail on?")
-
-
+        } else if (diceRoll >= 16) {
+          alert("Congratulations! We have arrived at the Shining Sea. Sail on?")
 
 
 
-          }
+
+
         }
 
       }
