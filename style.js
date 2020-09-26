@@ -458,6 +458,15 @@ function lady() {
 }
 
 
+// ruins plot
+
+
+// village plot
+
+
+// sea plot
+
+
 
 // game code
 
