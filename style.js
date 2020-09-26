@@ -11,6 +11,7 @@ var thief = true;
 var guild = true;
 var drinks = true;
 var courtesan = true;
+var enemy = "";
 
 // a fever
 // dysentery
@@ -31,7 +32,7 @@ function gameStart() {
   playerName = prompt("Welcome! What is your name?");
   join = confirm("Hello, " + playerName + "! I'm going on an adventure! Will you join me?");
   if (join === true) {
-    var direction = prompt("Where shall we go? To the South is the great city of Cervania. To the East is the Great Grassland. To the North is a the Vast, Frozen Waste. To the West is the Shining Sea. Please type 'south', 'east', 'north', or 'west'.")
+    direction = prompt("Where shall we go? To the South is the great city of Cervania. To the East is the Great Grassland. To the North is a the Vast, Frozen Waste. To the West is the Shining Sea. Please type 'south', 'east', 'north', or 'west'.")
     if (direction === "south") {
       south();
     } else if (direction === "east") {
@@ -54,6 +55,7 @@ function dice() {
 
 // direction
 function south() {
+  enemy=("bandits");
   dice();
   if (diceRoll <= 2) {
     alert("The entire party has contracted cholera and died.");
@@ -71,6 +73,7 @@ function south() {
 
 
 function east() {
+  enemy=("");
   dice();
   if (diceRoll < 4) {
     alert("You have died of snakebite.");
@@ -90,6 +93,7 @@ function east() {
 
 
 function north() {
+  enemy="barbarians"
   dice();
   if (diceRoll <= 5) {
     alert("You fell and broke your leg.");
@@ -112,6 +116,7 @@ function north() {
 
 
 function west() {
+  enemy="raiders"
   dice();
   if (diceRoll < 11) {
     alert("Oh, no! We've been ambushed by raiders!");
@@ -136,7 +141,7 @@ function travel() {
   if (diceRoll <= 3) {
     ravine();
   } else if (diceRoll > 3 && diceRoll <= 10) {
-    alert("Oh, no! We've been ambushed by bandits!");
+    alert("Oh, no! We've been ambushed by " + enemy + "!");
     fightNow();
   } else if (diceRoll > 10 && diceRoll <= 15) {
     lostTrav();
@@ -163,13 +168,13 @@ function ravine() {
     alert("Game Over");
   } else if (diceRoll > 6 && diceRoll <= 11) {
     alert("We manage to climb out.");
-    alert("Oh, no! There are bandits waiting.");
+    alert("Oh, no! There are " + enemy + "waiting.");
     fightNow();
   } else if (diceRoll < 11 && diceRoll > 20) {
     lostTrav();
   } else if (diceRoll = 20) {
     alert("We are helped out of the ravine by a caravan master.");
-    alert("He offers to take us to Cervania.");
+    alert("He offers to take us to our destination.");
     alert("We accept.");
     alert("Congratulations! We have arrived safely.");
     if (direction === "south") {
