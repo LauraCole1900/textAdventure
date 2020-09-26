@@ -1,0 +1,13 @@
+/* body {
+  background-color: #0d4b16;
+  background-image: url(parchment_background.png);
+  background image found here https://www.cleanpng.com/png-parchment-paper-blog-1782664/download-png.html
+} */
+
+h1 {
+  color: #533829;
+  font-size: 20em;
+  text-align: center;
+  margin-top: 50em;
+  z-index: 2;
+  }
