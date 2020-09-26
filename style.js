@@ -41,7 +41,7 @@ function gameStart() {
     } else if (direction === "west") {
       west();
     }
-  }
+  } return direction;
 }
 
 
@@ -73,13 +73,11 @@ function south() {
 function east() {
   dice();
   if (diceRoll < 4) {
-    alert("You got bit by a snake and died.");
+    alert("You have died of snakebite.");
     alert("Game Over");
   } else if (diceRoll >= 4 && diceRoll < 11) {
     alert("Oh, no! We've been attacked by wolves!");
     fightNow();
-
-
   } else if (diceRoll >= 11 && diceRoll < 16) {
     lostTrav();
 
@@ -99,7 +97,7 @@ function north() {
     alert("You died of exposure.");
     alert("Game Over");
   } else if (diceRoll > 5 && diceRoll <= 10) {
-    alert("Oh, no! We've been attacked by a great white bear!");
+    alert("Oh, no! We've been attacked by a sleuth of great white bears!");
     fightNow();
 
 
@@ -143,8 +141,16 @@ function travel() {
   } else if (diceRoll > 10 && diceRoll <= 15) {
     lostTrav();
   } else if (diceRoll < 15) {
-    alert("Congratulations! We have arrived safely in Cervania.");
-    city();
+    alert("Congratulations! We have arrived safely.");
+    if (direction === "south") {
+      city();
+    } else if (direction === "east") {
+      ruins();
+    } else if (direction === "north") {
+      village();
+    } else if (direction === "west") {
+      sea();
+    }
   }
 }
 
@@ -155,7 +161,7 @@ function ravine() {
     alert("We try to climb out and fall. You've broken your arm.");
     alert("You have died of a broken arm.");
     alert("Game Over");
-  } else if (diceRoll > 6 && diceRoll <=11) {
+  } else if (diceRoll > 6 && diceRoll <= 11) {
     alert("We manage to climb out.");
     alert("Oh, no! There are bandits waiting.");
     fightNow();
@@ -165,8 +171,16 @@ function ravine() {
     alert("We are helped out of the ravine by a caravan master.");
     alert("He offers to take us to Cervania.");
     alert("We accept.");
-    alert("Congratulations! We have arrived safely in Cervania.");
-    city();
+    alert("Congratulations! We have arrived safely.");
+    if (direction === "south") {
+      city();
+    } else if (direction === "east") {
+      ruins();
+    } else if (direction === "north") {
+      village();
+    } else if (direction === "west") {
+      sea();
+    }
   }
 }
 
@@ -176,7 +190,7 @@ function run() {
   if (diceRoll <= 5) {
     alert("We've been killed.");
     alert("Game Over");
-  } else if (diceroll > 5 && diceRoll <= 12) {
+  } else if (diceRoll > 5 && diceRoll <= 12) {
     alert("We're wounded.");
     run();
   } else if (diceRoll > 12) {
@@ -268,7 +282,15 @@ function lostTrav() {
     } else if (diceRoll > 12) {
       alert("Our directions are correct.");
       alert("Congratulations! We have arrived safely.");
-      city();
+      if (direction === "south") {
+        city();
+      } else if (direction === "east") {
+        ruins();
+      } else if (direction === "north") {
+        village();
+      } else if (direction === "west") {
+        sea();
+      }
     }
   } else if (lost === false) {
     alert("We're lost.");
