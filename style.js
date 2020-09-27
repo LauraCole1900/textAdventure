@@ -6,12 +6,12 @@ var direction = "";
 var diceRoll = 1;
 var lost = true;
 var fight = true;
+var enemy = "";
 var merchant = true;
 var thief = true;
 var guild = true;
 var drinks = true;
 var courtesan = true;
-var enemy = "";
 
 // a fever
 // dysentery
@@ -29,7 +29,21 @@ var enemy = "";
 // functions
 
 function gameStart() {
-  playerName = prompt("Welcome! What is your name?");
+  alert("Welcome!")
+  namePlayer();
+}
+
+function namePlayer() {
+  playerName = prompt("What is your name?");
+  if (playerName === "" || playerName === null) {
+    alert("I'm sorry; I didn't catch that.");
+    namePlayer();
+  } else {
+  joinParty();
+  }
+}
+
+  function joinParty() {
   join = confirm("Hello, " + playerName + "! I'm going on an adventure! Will you join me?");
   if (join === true) {
     direction = prompt("Where shall we go? To the South is the great city of Cervania. To the East is the Great Grassland. To the North is a the Vast, Frozen Waste. To the West is the Shining Sea. Please type 'south', 'east', 'north', or 'west'.")
@@ -162,6 +176,7 @@ function travel() {
 
 function ravine() {
   alert("Oh, no! We've fallen down a ravine. Can we get out?");
+  dice();
   if (diceRoll <= 6) {
     alert("We try to climb out and fall. You've broken your arm.");
     alert("You have died of a broken arm.");

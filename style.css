@@ -1,9 +1,9 @@
 body {
   background-color: #0d4b16;
+  background-image: image("parchment_background.png");
 }
 
 h1 {
-  /* color: #533829; */
   font-size: 120px;
   text-align: center;
   margin-top: 100px;
