@@ -1,5 +1,7 @@
 // variables
 
+var startBtn = document.querySelector("#start")
+
 var playerName = "";
 var join = true;
 var direction = "";
@@ -183,7 +185,7 @@ function ravine() {
     alert("Game Over");
   } else if (diceRoll > 6 && diceRoll <= 11) {
     alert("We manage to climb out.");
-    alert("Oh, no! There are " + enemy + "waiting.");
+    alert("Oh, no! There are " + enemy + " waiting.");
     fightNow();
   } else if (diceRoll < 11 && diceRoll > 20) {
     lostTrav();
@@ -484,5 +486,6 @@ function lady() {
 
 
 // game code
-
-gameStart();
+start.addEventListener("click", function(){
+  gameStart();
+});
