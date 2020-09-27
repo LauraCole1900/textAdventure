@@ -74,7 +74,7 @@ function south() {
   enemy=("bandits");
   dice();
   if (diceRoll <= 2) {
-    alert("The entire party has contracted cholera and died.");
+    alert("The entire party has died of cholera.");
     alert("Game Over");
   } else if (diceRoll > 2 && diceRoll <= 10) {
     alert("Oh, no! We've been ambushed by bandits!");
@@ -161,7 +161,7 @@ function travel() {
     fightNow();
   } else if (diceRoll > 10 && diceRoll <= 15) {
     lostTrav();
-  } else if (diceRoll < 15) {
+  } else if (diceRoll > 15) {
     alert("Congratulations! We have arrived safely.");
     if (direction === "south") {
       city();
@@ -187,7 +187,7 @@ function ravine() {
     alert("We manage to climb out.");
     alert("Oh, no! There are " + enemy + " waiting.");
     fightNow();
-  } else if (diceRoll < 11 && diceRoll > 20) {
+  } else if (diceRoll > 11 && diceRoll < 20) {
     lostTrav();
   } else if (diceRoll = 20) {
     alert("We are helped out of the ravine by a caravan master.");
