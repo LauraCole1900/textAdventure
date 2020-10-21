@@ -586,11 +586,29 @@ function ghosts() {
     alert("The ghosts have made you one of them.");
     alert("Game over");
   } else if (diceRoll > 3 && diceRoll <= 12) {
-
+    alert("Oh, no, they've caught up....");
+    alert("I feel cold....");
+    alert("Ohgodow ... my chest hurts like I've been shot!");
+    alert("I have been shot! I've been shot! I've....");
+    alert("... but there's no arrow....");
+    alert("What? 'That's how I died'? Who said....")
+    alert("AHHHHH! The ghost made me live its death! RUN AWAY!")
+    ghosts();
   } else if (diceRoll > 12 && diceRoll < 20) {
-
+    alert("Wait ... I think ... we got ... away ... from them....");
+    alert("Just let ... me catch ... my breath....");
+    alert("Door? What door?");
+    alert("Hey, look at that! A door into the ground.");
+    dungeonCrawl();
   } else if (diceRoll = 20) {
-
+    alert("A cleric? I don't ... oh, YOU'RE a cleric?");
+    alert("...");
+    alert("Well, if you know how, go ahead.");
+    alert("...");
+    alert("Wow, they looked ... relieved. I guess being released like that was all they wanted.");
+    alert("Although....");
+    alert("That place there, that looks like a door. A door into the ground?");
+    dungeonCrawl();
   }
 }
 
