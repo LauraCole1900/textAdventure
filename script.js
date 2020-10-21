@@ -1,4 +1,4 @@
-// variables
+// global variables
 
 var startBtn = document.querySelector("#start")
 
@@ -14,6 +14,9 @@ var thief = true;
 var guild = true;
 var drinks = true;
 var courtesan = true;
+var ruin = true;
+var ogres = true;
+var dungeon = true;
 
 // a fever
 // dysentery
@@ -41,11 +44,11 @@ function namePlayer() {
     alert("I'm sorry; I didn't catch that.");
     namePlayer();
   } else {
-  joinParty();
+    joinParty();
   }
 }
 
-  function joinParty() {
+function joinParty() {
   join = confirm("Hello, " + playerName + "! I'm going on an adventure! Will you join me?");
   if (join === true) {
     direction = prompt("Where shall we go? To the South is the great city of Cervania. To the East is the Great Grassland. To the North is a the Vast, Frozen Waste. To the West is the Shining Sea. Please type 'south', 'east', 'north', or 'west'.")
@@ -71,7 +74,7 @@ function dice() {
 
 // direction
 function south() {
-  enemy=("bandits");
+  enemy = ("bandits");
   dice();
   if (diceRoll <= 2) {
     alert("The entire party has died of cholera.");
@@ -89,7 +92,7 @@ function south() {
 
 
 function east() {
-  enemy=("");
+  enemy = "ogres";
   dice();
   if (diceRoll < 4) {
     alert("You have died of snakebite.");
@@ -99,17 +102,16 @@ function east() {
     fightNow();
   } else if (diceRoll >= 11 && diceRoll < 16) {
     lostTrav();
-
   } else if (diceRoll >= 16) {
-    alert("There are ruins in the distance. Should we investigate?")
-
+    alert("We've reached the Great Grassland.");
+    ruins();
   }
 
 }
 
 
 function north() {
-  enemy="barbarians"
+  enemy = "barbarians"
   dice();
   if (diceRoll <= 5) {
     alert("You fell and broke your leg.");
@@ -132,7 +134,7 @@ function north() {
 
 
 function west() {
-  enemy="raiders"
+  enemy = "raiders"
   dice();
   if (diceRoll < 11) {
     alert("Oh, no! We've been ambushed by raiders!");
@@ -476,7 +478,136 @@ function lady() {
 
 
 // ruins plot
+function ruins() {
+  ruin = confirm("There are ruins in the distance. Shall we investigate?")
+  if (ruin === true) {
+    dice();
+    if (diceRoll < 4) {
+      alert("The ruins were unstable and have collapsed. The entire party has been crushed to death.");
+      alert("Game over");
+    } else if (diceRoll >= 4 && diceRoll < 11) {
+      ogres = confirm("A group of ogres has appeared. Fight or run? Click 'OK' to fight or 'Cancel' to run.")
+      if (ogres === true) {
+        ogreFight();
+      } else {
+        ogreRun();
+      }
+    } else if (diceRoll >= 11 && diceRoll < 17) {
+      alert("Not to alarm you, but I think we're being followed.");
+      alert("No, I can't hear them either, but look, there's movement.");
+      alert("Right there, in front of the juniper bush ... in ... front of?");
+      alert("AHHHHHHHHHHH! GHOSTS! RUN!");
+      ghosts();
+    } else if (diceRoll >= 17) {
+      alert("Wow, this was a whole city once.");
+      alert("We could spend the rest of our lives exploring this place.");
+      alert("Ooh, how about starting with that door in the ground?");
+      dungeonCrawl();
+    }
+  }
+}
 
+function ogreFight() {
+  dice();
+  if (diceRoll < 6) {
+    alert("We've been crushed by ogres.");
+    alert("Game Over");
+  } else if (diceRoll >= 6 && diceRoll < 12) {
+    alert("We're surrounded! They've broken your leg! Fight like our lives depend on it!");
+    ogresBadlyWounded();
+  } else if (diceRoll >= 12 && diceRoll < 17) {
+    ogresBarelyWounded();
+  } else if (diceRoll >= 17 && diceRoll < 20) {
+    alert("They're running away!");
+    alert("Let's get out of here.");
+    alert("Look, there's a door in the ground.");
+    dungeonCrawl();
+  } else if (diceRoll = 20) {
+    alert("Wow! We've killed all of them! You're ... quite a fighter....");
+    alert("Let's get out of here.");
+    alert("Look, there's a door in the ground.");
+    dungeonCrawl();
+  }
+}
+
+function ogresBadlyWounded() {
+  dice();
+  if (diceRoll <= 10) {
+    alert("We've been crushed by ogres.");
+    alert("Game over");
+  } else {
+    alert("They're leaving. They're leaving?");
+    alert("Eww. What's that ... EWWWW!");
+    alert("I guess even ogres don't like skunks.");
+    alert("Let's go ... look, a door in the ground! Can you manage, with your leg?");
+    dungeonCrawl();
+  }
+}
+
+function ogresBarelyWounded() {
+  dice();
+  if (diceRoll <=6) {
+    alert("We've been crushed by ogres.");
+    alert("Game over");
+  } else if (diceRoll > 6 && diceRoll <= 12) {
+    alert("Oh, no! They've broken your leg! Fight like our lives depend on it!");
+    ogresBadlyWounded();
+  } else if (diceRoll > 12 && diceRoll <=18) {
+    alert("They're leaving. They're leaving?");
+    alert("Eww. What's that ... EWW!");
+    alert("I guess even ogres don't like skunks.");
+    alert("Let's go. How about that door in the ground?");
+    dungeonCrawl();
+  } else if (diceRoll > 18) {
+    alert("Wow. We've killed them all. You're ... quite a fighter....");
+    alert("Let's get out of here. Maybe that door in the ground will show something interesting.");
+    dungeonCrawl();
+  }
+}
+
+function ogreRun() {
+  dice();
+  if (diceRoll <= 10) {
+    alert("We've been crushed by ogres.");
+    alert("Game over");
+  } else if (diceRoll > 10) {
+    alert("Whew, that was close. I swear I could smell them.");
+    alert("Yeah, I know, that's not saying much when it's ogres.");
+    alert("That's weird. That door leads straight into the ground.");
+    dungeonCrawl();
+  }
+}
+
+function ghosts() {
+  dice();
+  if (diceRoll <=3) {
+    alert("Faster! They're gaining!");
+    alert("Ohnononono....");
+    alert("The ghosts have made you one of them.");
+    alert("Game over");
+  } else if (diceRoll > 3 && diceRoll <= 12) {
+
+  } else if (diceRoll > 12 && diceRoll < 20) {
+
+  } else if (diceRoll = 20) {
+
+  }
+}
+
+function dungeonCrawl() {
+  dungeon = confirm("Should we check it out? Click 'OK' for yes or 'Cancel' for no.")
+  if (dungeon === true) {
+
+  } else {
+    alert("We emerge from the ruins with no idea where we are.");
+    alert("Lost, we wander the Great Grassland for the rest of our lives....");
+    alert("... which end up being quite short. The Great Grassland is home to several tribes of ogres,");
+    alert("none of which like any of the other tribes, but they all hate humans.");
+    alert("Some of them find us.");
+    alert("The entire party is crushed by ogres.");
+    alert("Game over");
+  }
+}
 
 // village plot
 
@@ -486,6 +617,6 @@ function lady() {
 
 
 // game code
-start.addEventListener("click", function(){
+start.addEventListener("click", function () {
   gameStart();
 });
