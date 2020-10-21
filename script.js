@@ -507,6 +507,7 @@ function ruins() {
   }
 }
 
+
 function ogreFight() {
   dice();
   if (diceRoll < 6) {
@@ -530,6 +531,7 @@ function ogreFight() {
   }
 }
 
+
 function ogresBadlyWounded() {
   dice();
   if (diceRoll <= 10) {
@@ -543,6 +545,7 @@ function ogresBadlyWounded() {
     dungeonCrawl();
   }
 }
+
 
 function ogresBarelyWounded() {
   dice();
@@ -565,6 +568,7 @@ function ogresBarelyWounded() {
   }
 }
 
+
 function ogreRun() {
   dice();
   if (diceRoll <= 10) {
@@ -577,6 +581,7 @@ function ogreRun() {
     dungeonCrawl();
   }
 }
+
 
 function ghosts() {
   dice();
@@ -612,6 +617,7 @@ function ghosts() {
   }
 }
 
+
 function dungeonCrawl() {
   dungeon = confirm("Should we check it out? Click 'OK' for yes or 'Cancel' for no.")
   if (dungeon === true) {
@@ -626,6 +632,7 @@ function dungeonCrawl() {
     alert("Game over");
   }
 }
+
 
 // village plot
 
