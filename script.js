@@ -121,11 +121,8 @@ function north() {
   } else if (diceRoll > 5 && diceRoll <= 10) {
     alert("Oh, no! We've been attacked by a sleuth of great white bears!");
     fightNow();
-
-
   } else if (diceRoll >= 11 && diceRoll < 16) {
     lostTrav();
-
   } else if (diceRoll >= 16) {
     alert("In the distance, you see a village. Should we investigate?");
 
@@ -139,11 +136,8 @@ function west() {
   if (diceRoll < 11) {
     alert("Oh, no! We've been ambushed by raiders!");
     fightNow();
-
-
   } else if (diceRoll >= 11 && diceRoll < 16) {
     lostTrav();
-
   } else if (diceRoll >= 16) {
     alert("Congratulations! We have arrived at the Shining Sea. Sail on?");
 
