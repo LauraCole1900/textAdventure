@@ -51,7 +51,8 @@ function namePlayer() {
 function joinParty() {
   join = confirm("Hello, " + playerName + "! I'm going on an adventure! Will you join me?");
   if (join === true) {
-    direction = prompt("Where shall we go? To the South is the great city of Cervania. To the East is the Great Grassland. To the North is a the Vast, Frozen Waste. To the West is the Shining Sea. Please type 'south', 'east', 'north', or 'west'.")
+    userDir = prompt("Where shall we go? To the South is the great city of Cervania. To the East is the Great Grassland. To the North is a the Vast, Frozen Waste. To the West is the Shining Sea. Please type 'south', 'east', 'north', or 'west'.")
+    direction = userDir.toLowerCase()
     if (direction === "south") {
       south();
     } else if (direction === "east") {
