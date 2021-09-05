@@ -35,7 +35,7 @@ var dungeonBattle = true;
 // functions
 
 function gameStart() {
-  alert("Welcome!")
+  alert("Welcome!");
   namePlayer();
 }
 
@@ -53,7 +53,7 @@ function joinParty() {
   join = confirm("Hello, " + playerName + "! I'm going on an adventure! Will you join me?");
   if (join === true) {
     userDir = prompt("Where shall we go? To the South is the great city of Cervania. To the East is the Great Grassland. To the North is a the Vast, Frozen Waste. To the West is the Shining Sea. Please type 'south', 'east', 'north', or 'west'.")
-    direction = userDir.toLowerCase()
+    direction = userDir.toLowerCase();
     if (direction === "south") {
       south();
     } else if (direction === "east") {
@@ -108,7 +108,6 @@ function east() {
     alert("We've reached the Great Grassland.");
     ruins();
   }
-
 }
 
 
@@ -134,7 +133,6 @@ function north() {
       alert("We wander the wilderness until we die of starvation.");
       alert("Game Over");
     }
-
   }
 }
 
@@ -151,7 +149,6 @@ function west() {
     alert("Congratulations! We have arrived at the Shining Sea. Sail on?");
 
   }
-
 }
 
 
@@ -325,8 +322,8 @@ function lostTrav() {
     alert("I'm pretty sure we've passed that tree before.");
     alert("And that stump ... we're either walking in circles, or that stump is following us.");
     alert("There's no one out here to ask now.");
-    alert("We continue to wander in circles until the entire party dies of exhaustion.")
-    alert("Game Over")
+    alert("We continue to wander in circles until the entire party dies of exhaustion.");
+    alert("Game Over");
   }
 }
 
@@ -482,14 +479,14 @@ function lady() {
 
 // ruins plot
 function ruins() {
-  ruin = confirm("There are ruins in the distance. Shall we investigate?")
+  ruin = confirm("There are ruins in the distance. Shall we investigate?");
   if (ruin === true) {
     dice();
     if (diceRoll < 4) {
       alert("The ruins were unstable and have collapsed. The entire party has been crushed to death.");
       alert("Game over");
     } else if (diceRoll >= 4 && diceRoll < 11) {
-      ogres = confirm("A group of ogres has appeared. Fight or run? Click 'OK' to fight or 'Cancel' to run.")
+      ogres = confirm("A group of ogres has appeared. Fight or run? Click 'OK' to fight or 'Cancel' to run.");
       if (ogres === true) {
         ogreFight();
       } else {
@@ -599,8 +596,8 @@ function ghosts() {
     alert("Ohgodow ... my chest hurts like I've been shot!");
     alert("I have been shot! I've been shot! I've....");
     alert("... but there's no arrow....");
-    alert("What? 'That's how I died'? Who said....")
-    alert("AHHHHH! The ghost made me live its death! RUN AWAY!")
+    alert("What? 'That's how I died'? Who said....");
+    alert("AHHHHH! The ghost made me live its death! RUN AWAY!");
     ghosts();
   } else if (diceRoll > 12 && diceRoll < 20) {
     alert("Wait ... I think ... we got ... away ... from them....");
@@ -624,7 +621,7 @@ function ghosts() {
 function dungeonCrawl() {
   dungeon = confirm("Should we check it out? Click 'OK' for yes or 'Cancel' for no.");
   if (dungeon === true) {
-    diceRoll();
+    dice();
     if (diceRoll <= 2) {
       alert("As soon as you descend into the hillside, the door slams shut. You can't get it open again. You die in the dark, unable to breathe.");
       alert("Game over");
@@ -663,7 +660,7 @@ function dungeonCrawl() {
 function dungeonFight() {
   dungeonBattle = confirm("Flame flares in the darkness as soon as you descend into the hillside. This place is already inhabited by ... by ... well, you can't tell. But they're not friendly. Fight or run? Click 'OK' to fight or 'Cancel' to run.");
   if (dungeonBattle === true) {
-    diceRoll();
+    dice();
     if (diceRoll <= 6) {
 
     } else if (diceRoll > 6 && diceRoll <= 13) {
@@ -679,12 +676,12 @@ function dungeonFight() {
     alert("The party returns to where you met. There's someone new there. They greet you.");
     joinParty();
   }
-};
+}
 
 
 // village plot
 function village() {
-  diceRoll();
+  dice();
   if (diceRoll <= 3) {
     alert("The people who live in this village don't look friendly.");
     alert("There sure are a lot of them....");
@@ -711,7 +708,7 @@ function village() {
     alert("They want to make you the new chief!");
     alert("You become the village's new chief. In time, you manage to make peace between the Northern tribes, becoming the Great Chief of the North. You have many children and grandchildren and, in the fullness of time, die peacefully in your bed, surrounded by your loved ones.");
     alert("Game over");
-  };
+  }
 }
 
 // sea plot
