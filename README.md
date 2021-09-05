@@ -5,7 +5,7 @@
 * [Description](#description)
 * [Link](#link)
 * [Screenshots](#screenshots)
-* [Installation](#installation)
+* [Installation Instructions](#installation-instructions)
 * [Usage](#usage)
 * [Technologies Used](#technologies-used)
 * [Tests](#tests)
@@ -29,7 +29,7 @@ NOTE: Currently, south is completely built out. East is nearing completion. Nort
 Landing page:
 ![Landing page](assets/lander.png)
 
-## Installation
+## Installation Instructions
 
 N/A
 
