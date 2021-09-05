@@ -17,6 +17,7 @@ var courtesan = true;
 var ruin = true;
 var ogres = true;
 var dungeon = true;
+var dungeonBattle = true;
 
 // a fever
 // dysentery
@@ -628,7 +629,7 @@ function dungeonCrawl() {
       alert("As soon as you descend into the hillside, the door slams shut. You can't get it open again. You die in the dark, unable to breathe.");
       alert("Game over");
     } else if (diceRoll > 2 && diceRoll <= 8) {
-
+      dungeonFight();
     } else if (diceRoll > 8 && diceRoll <= 13) {
 
     } else if (diceRoll > 13 && diceRoll < 19) {
@@ -657,6 +658,28 @@ function dungeonCrawl() {
     alert("Game over");
   }
 }
+
+
+function dungeonFight() {
+  dungeonBattle = confirm("Flame flares in the darkness as soon as you descend into the hillside. This place is already inhabited by ... by ... well, you can't tell. But they're not friendly. Fight or run? Click 'OK' to fight or 'Cancel' to run.");
+  if (dungeonBattle === true) {
+    diceRoll();
+    if (diceRoll <= 6) {
+
+    } else if (diceRoll > 6 && diceRoll <= 13) {
+
+    } else {
+
+    }
+  } else {
+    alert("You scramble back into the light, whatever-it-is on your heels. On reaching the surface, you race to the long grass and duck down, allowing your pursuit to pass you by. Even in the sunlight, it's unclear what they are. It's as if their forms flicker in the sunlight.");
+    alert("Once the sounds of pursuit die away, you chance looking around. There's nothing but grass, no ruins, not even the door from which you emerged.");
+    alert("So ... what should we do now?");
+    alert("Go back? Okay.");
+    alert("The party returns to where you met. There's someone new there. They greet you.");
+    joinParty();
+  }
+};
 
 
 // village plot
