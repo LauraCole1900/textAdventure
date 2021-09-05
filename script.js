@@ -621,7 +621,7 @@ function ghosts() {
 
 
 function dungeonCrawl() {
-  dungeon = confirm("Should we check it out? Click 'OK' for yes or 'Cancel' for no.")
+  dungeon = confirm("Should we check it out? Click 'OK' for yes or 'Cancel' for no.");
   if (dungeon === true) {
     diceRoll();
     if (diceRoll <= 2) {
@@ -629,6 +629,23 @@ function dungeonCrawl() {
       alert("Game over");
     } else if (diceRoll > 2 && diceRoll <= 8) {
 
+    } else if (diceRoll > 8 && diceRoll <= 13) {
+
+    } else if (diceRoll > 13 && diceRoll < 19) {
+
+    } else {
+      alert("This place is huge!");
+      alert("Let's check it out.");
+      alert("Whoaaaaa....");
+      alert("I have never SEEN so much treasure in my life!");
+      alert("Well, since you ask, no, I've never seen any treasure before in my life. But ... the whole room! There's so much treasure, we could swim in it!");
+      alert("Yes, I DO know it's too hard to swim in. It's a figure of speech.");
+      alert("We're all as rich as Creosote!");
+      alert("Huh? Who's Croesus?");
+      alert("Never mind. We're RICH! That's the point!");
+      alert("The party returns to the surface, each carrying as much of the treasure as they can carry. It didn't even make a dent in the piles of wealth below the ground.");
+      alert("Each member returns to the life that best suits them, now easily able to finance whatever lifestyle each chooses. In time, each passes comfortably and peacefully, never revealing the location of the treasure.");
+      alert("Game over");
     }
   } else {
     alert("We emerge from the ruins with no idea where we are.");
@@ -640,6 +657,7 @@ function dungeonCrawl() {
     alert("Game over");
   }
 }
+
 
 // village plot
 function village() {
