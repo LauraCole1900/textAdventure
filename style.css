@@ -10,29 +10,29 @@ h1 {
   font-size: 120px;
   text-align: center;
   margin-top: 100px;
-  font-family: 'Grenze Gotisch', serif;
-  }
+  font-family: "Grenze Gotisch", serif;
+}
 
-  .btnDiv {
-    text-align: center;
-  }
+.btnDiv {
+  text-align: center;
+}
 
-  .btn {
-    border: 3px solid black;
-    background-color: #ffd833;
-    border-radius: 25px;
-    color: black;
-    display: inline-block;
-    font-size: 22px;
-    font-family: 'Grenze Gotisch', serif;
-    line-height: 22px;
-    margin: 16px 16px 16px 20px;
-    padding: 14px 34px;
-    text-align: center;
-    cursor: pointer;
-  }
+.btn {
+  border: 3px solid black;
+  background-color: #ffd833;
+  border-radius: 25px;
+  color: black;
+  display: inline-block;
+  font-size: 22px;
+  font-family: "Grenze Gotisch", serif;
+  line-height: 22px;
+  margin: 16px 16px 16px 20px;
+  padding: 14px 34px;
+  text-align: center;
+  cursor: pointer;
+}
 
-  button[disabled] {
-    cursor: default;
-    background: #65696e;
-  }
+button[disabled] {
+  cursor: default;
+  background: #65696e;
+}

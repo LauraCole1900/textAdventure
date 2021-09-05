@@ -691,7 +691,7 @@ function village() {
     alert("The villagers attack the party. We are quickly overwhelmed.");
     alert("The party has been wiped out.");
     alert("Game over");
-  } else if (diceRoll > 3 && diceRoll <= 7 ) {
+  } else if (diceRoll > 3 && diceRoll <= 7) {
 
   } else if (diceRoll > 7 && diceRoll <= 12) {
 
