@@ -125,7 +125,14 @@ function north() {
   } else if (diceRoll >= 11 && diceRoll < 16) {
     lostTrav();
   } else if (diceRoll >= 16) {
-    alert("In the distance, you see a village. Should we investigate?");
+    const villageConf = confirm("In the distance, you see a village. Should we investigate?");
+    console.log({ villageConf });
+    if (villageConf === true) {
+      village();
+    } else {
+      alert("We wander the wilderness until we die of starvation.");
+      alert("Game Over");
+    }
 
   }
 }
@@ -186,7 +193,7 @@ function ravine() {
     fightNow();
   } else if (diceRoll > 11 && diceRoll < 20) {
     lostTrav();
-  } else if (diceRoll = 20) {
+  } else if (diceRoll === 20) {
     alert("We are helped out of the ravine by a caravan master.");
     alert("He offers to take us to our destination.");
     alert("We accept.");
@@ -235,7 +242,7 @@ function fightNow() {
       alert("They're running away!");
       alert("Let's get out of here.");
       travel();
-    } else if (diceRoll = 20) {
+    } else if (diceRoll === 20) {
       alert("Wow! We've killed all of them! You're ... quite a fighter....");
       alert("Let's get out of here.");
       travel();
@@ -277,7 +284,7 @@ function lightlyWounded() {
       alert("They're running away!");
       alert("Let's get out of here.");
       travel();
-    } else if (diceRoll = 20) {
+    } else if (diceRoll === 20) {
       alert("Wow! We've killed all of them! You're ... quite a fighter....");
       alert("Let's get out of here.");
       travel();
@@ -518,7 +525,7 @@ function ogreFight() {
     alert("Let's get out of here.");
     alert("Look, there's a door in the ground.");
     dungeonCrawl();
-  } else if (diceRoll = 20) {
+  } else if (diceRoll === 20) {
     alert("Wow! We've killed all of them! You're ... quite a fighter....");
     alert("Let's get out of here.");
     alert("Look, there's a door in the ground.");
@@ -544,13 +551,13 @@ function ogresBadlyWounded() {
 
 function ogresBarelyWounded() {
   dice();
-  if (diceRoll <=6) {
+  if (diceRoll <= 6) {
     alert("We've been crushed by ogres.");
     alert("Game over");
   } else if (diceRoll > 6 && diceRoll <= 12) {
     alert("Oh, no! They've broken your leg! Fight like our lives depend on it!");
     ogresBadlyWounded();
-  } else if (diceRoll > 12 && diceRoll <=18) {
+  } else if (diceRoll > 12 && diceRoll <= 18) {
     alert("They're leaving. They're leaving?");
     alert("Eww. What's that ... EWW!");
     alert("I guess even ogres don't like skunks.");
@@ -580,7 +587,7 @@ function ogreRun() {
 
 function ghosts() {
   dice();
-  if (diceRoll <=3) {
+  if (diceRoll <= 3) {
     alert("Faster! They're gaining!");
     alert("Ohnononono....");
     alert("The ghosts have made you one of them.");
@@ -600,7 +607,7 @@ function ghosts() {
     alert("Door? What door?");
     alert("Hey, look at that! A door into the ground.");
     dungeonCrawl();
-  } else if (diceRoll = 20) {
+  } else if (diceRoll === 20) {
     alert("A cleric? I don't ... oh, YOU'RE a cleric?");
     alert("...");
     alert("Well, if you know how, go ahead.");
@@ -616,7 +623,13 @@ function ghosts() {
 function dungeonCrawl() {
   dungeon = confirm("Should we check it out? Click 'OK' for yes or 'Cancel' for no.")
   if (dungeon === true) {
+    diceRoll();
+    if (diceRoll <= 2) {
+      alert("As soon as you descend into the hillside, the door slams shut. You can't get it open again. You die in the dark, unable to breathe.");
+      alert("Game over");
+    } else if (diceRoll > 2 && diceRoll <= 8) {
 
+    }
   } else {
     alert("We emerge from the ruins with no idea where we are.");
     alert("Lost, we wander the Great Grassland for the rest of our lives....");
@@ -629,7 +642,36 @@ function dungeonCrawl() {
 }
 
 // village plot
+function village() {
+  diceRoll();
+  if (diceRoll <= 3) {
+    alert("The people who live in this village don't look friendly.");
+    alert("There sure are a lot of them....");
+    alert("The villagers attack the party. We are quickly overwhelmed.");
+    alert("The party has been wiped out.");
+    alert("Game over");
+  } else if (diceRoll > 3 && diceRoll <= 7 ) {
 
+  } else if (diceRoll > 7 && diceRoll <= 12) {
+
+  } else if (diceRoll > 12 && diceRoll <= 19) {
+
+  } else if (diceRoll === 20) {
+    alert("The people who live in this village don't look friendly.");
+    alert("There sure are a lot of them....");
+    alert("They sure seem interested in your armor.");
+    alert("...wait, what?");
+    alert("That symbol? I don't know. What DOES that symbol mean?");
+    alert("...Chief? What chief?");
+    alert("Psst ... how long have you had that armor?");
+    alert("Since you were a baby?");
+    alert("The villagers look excited. Is this good or bad?");
+    alert("...the child of the chief who was killed all those years ago?");
+    alert("They want to make you the new chief!");
+    alert("You become the village's new chief. In time, you manage to make peace between the Northern tribes, becoming the Great Chief of the North. You have many children and grandchildren and, in the fullness of time, die peacefully in your bed, surrounded by your loved ones.");
+    alert("Game over");
+  };
+}
 
 // sea plot
 
