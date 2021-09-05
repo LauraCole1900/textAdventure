@@ -26,6 +26,7 @@ NOTE: Currently, South is completely built out. East is nearing completion. Nort
 
 ## Screenshots
 
+Landing page:
 ![Landing page](assets/lander.png)
 
 ## Installation
