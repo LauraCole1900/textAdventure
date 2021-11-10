@@ -39,7 +39,7 @@ This is intended as casual gaming. Feel free to use it to waste a few minutes.
 
 ## Technologies Used
 
-HTML5, CSS3, JavaScript
+[![HTML5](https://img.shields.io/badge/built%20with-HTML5-f06529)](https://developer.mozilla.org/en-US/docs/Glossary/HTML5) [![CSS3](https://img.shields.io/badge/built%20with-CSS3-2965f1)](https://developer.mozilla.org/en-US/docs/Web/CSS) [![JavaScript](https://img.shields.io/badge/built%20with-JavaScript-f0db4f)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 ## Tests
 
@@ -59,4 +59,4 @@ If you have further questions, you can reach me at lauracole1900@comcast.net. Fo
 
 ## Badges
 
-![License badge](https://img.shields.io/badge/license-MIT-0d4b16) [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/LauraCole1900/textAdventure)
+[![License badge](https://img.shields.io/badge/license-MIT-0d4b16)](./LICENSE) [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/LauraCole1900/textAdventure)
