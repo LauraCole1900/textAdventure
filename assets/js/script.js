@@ -1,4 +1,6 @@
-// global variables
+//==================//
+// Global Variables //
+//==================//
 
 var startBtn = document.querySelector("#start")
 
@@ -32,7 +34,10 @@ var dungeonBattle = true;
 
 
 
-// functions
+//==================//
+//    Game Start    //
+//     Functions    //
+//==================//
 
 function gameStart() {
   alert("Welcome!");
@@ -67,6 +72,7 @@ function joinParty() {
 }
 
 
+// Roll dice
 function dice() {
   diceRoll = Math.floor(Math.random() * 20) + 1;
   alert("You've rolled " + diceRoll);
@@ -74,7 +80,7 @@ function dice() {
 }
 
 
-// direction
+// Direction
 function south() {
   enemy = ("bandits");
   dice();
@@ -152,7 +158,7 @@ function west() {
 }
 
 
-// travelling
+// Travelling
 function travel() {
   alert("We continue on our way.");
   dice();
@@ -176,7 +182,6 @@ function travel() {
     }
   }
 }
-
 
 function ravine() {
   alert("Oh, no! We've fallen down a ravine. Can we get out?");
@@ -209,6 +214,7 @@ function ravine() {
 }
 
 
+// Run away!
 function run() {
   dice();
   if (diceRoll <= 5) {
@@ -224,7 +230,7 @@ function run() {
   }
 }
 
-
+// Stand and fight!
 function fightNow() {
   fight = confirm("Fight or run? Click 'OK' to fight or 'Cancel' to run.");
   if (fight === true) {
@@ -250,7 +256,6 @@ function fightNow() {
   }
 }
 
-
 function badlyWounded() {
   fight = confirm("We're badly wounded. Should we continue fighting? Click 'OK' to continue fighting or 'Cancel' to run");
   if (fight === true) {
@@ -267,7 +272,6 @@ function badlyWounded() {
     run();
   }
 }
-
 
 function lightlyWounded() {
   fight = confirm("We're lightly wounded. Should we continue fighting? Click 'OK' to continue fighting or 'Cancel' to run");
@@ -292,7 +296,7 @@ function lightlyWounded() {
   }
 }
 
-
+// Get lost
 function lostTrav() {
   lost = confirm("We're lost! Ask someone for directions?");
   if (lost === true) {
@@ -328,7 +332,10 @@ function lostTrav() {
 }
 
 
-// city plot
+//=================//
+//    City Plot    //
+//=================//
+
 function city() {
   merchant = confirm("Look! There's a merchant! Shall we approach him?");
   if (merchant === true) {
@@ -477,7 +484,10 @@ function lady() {
 }
 
 
-// ruins plot
+//==================//
+//    Ruins Plot    //
+//==================//
+
 function ruins() {
   ruin = confirm("There are ruins in the distance. Shall we investigate?");
   if (ruin === true) {
@@ -679,7 +689,10 @@ function dungeonFight() {
 }
 
 
-// village plot
+//==================//
+//   Village Plot   //
+//==================//
+
 function village() {
   dice();
   if (diceRoll <= 3) {
@@ -711,11 +724,19 @@ function village() {
   }
 }
 
-// sea plot
+
+//==================//
+//     Sea Plot     //
+//==================//
 
 
 
-// game code
+
+//==================//
+//    Start Game    //
+//==================//
+
+// Start game on button click
 start.addEventListener("click", function () {
   gameStart();
 });
