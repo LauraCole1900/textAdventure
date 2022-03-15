@@ -19,7 +19,9 @@ var courtesan = true;
 var ruin = true;
 var ogres = true;
 var dungeon = true;
+var dungeonCont = true;
 var dungeonBattle = true;
+var dungeonBattleStay = true;
 
 // a fever
 // dysentery
@@ -672,11 +674,21 @@ function dungeonFight() {
   if (dungeonBattle === true) {
     dice();
     if (diceRoll <= 6) {
-
+      alert("The things swarm you. The party is quickly overwhelmed and dies, screaming in the darkness.");
+      alert("Game over");
     } else if (diceRoll > 6 && diceRoll <= 13) {
-
+      alert("The things slink and slither through the uneven shadows cast by the torches.");
+      alert("They seem hesitant to approach, but they are approaching.");
+      alert("Suddenly, as if a signal had been given, they attack!");
+      alert("I've been bitten! I've been bitten!");
+      dungeonBattleWounded();
     } else {
-
+      alert("...what are you doing with that torch?");
+      alert("...why are you swinging it--hey, watch it, I'm standing here!");
+      alert("Wait a minute....");
+      alert("They don't like the light! Or the heat, or something. Where's another torch? I'll do that, too!");
+      alert("It's working! It's working! They're retreating!");
+      dungeonCrawlCont();
     }
   } else {
     alert("You scramble back into the light, whatever-it-is on your heels. On reaching the surface, you race to the long grass and duck down, allowing your pursuit to pass you by. Even in the sunlight, it's unclear what they are. It's as if their forms flicker in the sunlight.");
@@ -686,6 +698,36 @@ function dungeonFight() {
     alert("The party returns to where you met. There's someone new there. They greet you.");
     joinParty();
   }
+}
+
+
+function dungeonBattleWounded() {
+  dungeonBattleStay = confirm("The blood is driving them into a frenzy! Fight or run? Click 'OK' to fight or 'Cancel' to run.");
+  if (dungeonBattleStay === true) {
+    dice();
+    if (diceRoll <= 10) {
+      alert("The things swarm you. The party is quickly overwhelmed and dies, screaming in the darkness.");
+      alert("Game over");
+    } else {
+      alert("What are you doing with that torch?");
+      alert("Wow, good shot! You hit that one right between the eyes!");
+      alert("...they're retreating. They're retreating? They don't like fire!");
+      dungeonCrawlCont();
+    }
+  } else {
+    alert("We emerge from the ruins with no idea where we are.");
+    alert("Lost, we wander the Great Grassland for the rest of our lives....");
+    alert("... which end up being quite short. The Great Grassland is home to several tribes of ogres,");
+    alert("none of which like any of the other tribes, but they all hate humans.");
+    alert("Some of them find us.");
+    alert("The entire party is crushed by ogres.");
+    alert("Game over");
+  }
+}
+
+
+function dungeonCrawlCont() {
+  dungeonCont = confirm("Shall we continue exploring? Click 'OK' to continue or 'Cancel' to go back.");
 }
 
 
