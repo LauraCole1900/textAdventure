@@ -640,7 +640,7 @@ function dungeonCrawl() {
     } else if (diceRoll > 2 && diceRoll <= 8) {
       dungeonFight();
     } else if (diceRoll > 8 && diceRoll <= 13) {
-
+      dungeonTraps();
     } else if (diceRoll > 13 && diceRoll < 19) {
 
     } else {
@@ -726,8 +726,43 @@ function dungeonBattleWounded() {
 }
 
 
+function dungeonTraps() {
+  dice();
+  if (diceRoll < 4) {
+    alert("Wait! It's a--");
+    alert("The floor disappears under you. You drop into a pit of venomous snakes.")
+    alert("You have died of snakebite.");
+    alert("Game over");
+  } else if (diceRoll >= 4 && diceRoll < 8) {
+
+  } else if (diceRoll >= 8 && diceRoll < 12) {
+    
+  } else if (diceRoll >= 12 && diceRoll < 16) {
+
+  } else if (diceRoll >= 16 && diceRoll < 20) {
+
+  } else {
+    
+  }
+}
+
 function dungeonCrawlCont() {
   dungeonCont = confirm("Shall we continue exploring? Click 'OK' to continue or 'Cancel' to go back.");
+  if (dungeonCont === true) {
+    dice();
+    if (diceRoll <= 6) {
+
+    } else if (diceRoll > 6 && diceRoll <= 12) {
+
+    } else if (diceRoll > 12 && diceRoll <= 18) {
+
+    } else {
+
+    }
+
+  } else {
+
+  }
 }
 
 
