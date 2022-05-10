@@ -730,8 +730,8 @@ function dungeonTraps() {
   dice();
   if (diceRoll < 4) {
     alert("Wait! It's a--");
-    alert("The floor disappears under you. You drop into a pit of venomous snakes.")
-    alert("You have died of snakebite.");
+    alert("The floor disappears under the party. We drop into a pit of venomous snakes. Several immediately bite.")
+    alert("We have died of snakebite.");
     alert("Game over");
   } else if (diceRoll >= 4 && diceRoll < 8) {
 
@@ -742,9 +742,10 @@ function dungeonTraps() {
   } else if (diceRoll >= 16 && diceRoll < 20) {
 
   } else {
-    
+
   }
 }
+
 
 function dungeonCrawlCont() {
   dungeonCont = confirm("Shall we continue exploring? Click 'OK' to continue or 'Cancel' to go back.");
@@ -761,7 +762,12 @@ function dungeonCrawlCont() {
     }
 
   } else {
-
+    alert("We emerge from the ruins and take direction from the sun.");
+    alert("Looking around, we find that there's nothing but grass: no ruins, not even the door from which you emerged.");
+    alert("So ... what should we do now?");
+    alert("Go back? Okay.");
+    alert("The party returns to where you met. There's someone new there. They greet you.");
+    joinParty();
   }
 }
 
