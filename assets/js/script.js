@@ -734,7 +734,8 @@ function dungeonTraps() {
     alert("We have died of snakebite.");
     alert("Game over");
   } else if (diceRoll >= 4 && diceRoll < 8) {
-
+    alert("Wait! It's a--");
+    alert("A fireball explodes in the middle of the room. The party manages to partly take cover, but is still burned.");
   } else if (diceRoll >= 8 && diceRoll < 12) {
     
   } else if (diceRoll >= 12 && diceRoll < 16) {
