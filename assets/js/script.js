@@ -670,7 +670,7 @@ function dungeonCrawl() {
 
 
 function dungeonFight() {
-  dungeonBattle = confirm("Flame flares in the darkness as soon as you descend into the hillside. This place is already inhabited by ... by ... well, you can't tell. But they're not friendly. Fight or run? Click 'OK' to fight or 'Cancel' to run.");
+  dungeonBattle = confirm("Flame flares in the darkness. This place is already inhabited by ... by ... well, you can't tell. But they're not friendly. Fight or run? Click 'OK' to fight or 'Cancel' to run.");
   if (dungeonBattle === true) {
     dice();
     if (diceRoll <= 6) {
@@ -736,6 +736,7 @@ function dungeonTraps() {
   } else if (diceRoll >= 4 && diceRoll < 8) {
     alert("Wait! It's a--");
     alert("A fireball explodes in the middle of the room. The party manages to partly take cover, but is still burned.");
+    dungeonFight();
   } else if (diceRoll >= 8 && diceRoll < 12) {
     
   } else if (diceRoll >= 12 && diceRoll < 16) {
