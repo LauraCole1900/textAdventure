@@ -727,22 +727,21 @@ function dungeonBattleWounded() {
 
 
 function dungeonTraps() {
+  alert("Wait! It's a--");
   dice();
   if (diceRoll < 4) {
-    alert("Wait! It's a--");
     alert("The floor disappears under the party. We drop into a pit of venomous snakes. Several immediately bite.")
     alert("We have died of snakebite.");
     alert("Game over");
   } else if (diceRoll >= 4 && diceRoll < 8) {
-    alert("Wait! It's a--");
     alert("A fireball explodes in the middle of the room. The party manages to partly take cover, but is still burned.");
     dungeonFight();
   } else if (diceRoll >= 8 && diceRoll < 12) {
-    
+    // Thief attempts to disarm traps?
   } else if (diceRoll >= 12 && diceRoll < 16) {
 
   } else if (diceRoll >= 16 && diceRoll < 20) {
-
+    // Thief successfully disarms traps?
   } else {
 
   }
