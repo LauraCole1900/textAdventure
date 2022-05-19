@@ -741,7 +741,12 @@ function dungeonTraps() {
   } else if (diceRoll >= 12 && diceRoll < 16) {
 
   } else if (diceRoll >= 16 && diceRoll < 20) {
-    // Thief successfully disarms traps?
+    alert("You ... what?");
+    alert("How'd you learn how to--WHERE'D you learn how to--?");
+    alert("That was fast.");
+    alert("You're sure it's safe now?");
+    alert("...well, okay.");
+    dungeonCrawlCont();
   } else {
 
   }
