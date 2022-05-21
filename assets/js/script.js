@@ -734,9 +734,6 @@ function dungeonTraps() {
     alert("We have died of snakebite.");
     alert("Game over");
   } else if (diceRoll >= 4 && diceRoll < 8) {
-    alert("A fireball explodes in the middle of the room. The party manages to partly take cover, but is still burned.");
-    dungeonFight();
-  } else if (diceRoll >= 8 && diceRoll < 12) {
     alert("Are you sure you should be doing that?");
     alert("Ok, but HOW do you know what you're doing?");
     alert("OK, I'll just be over here ... behind this ... um, fallen column? Statue? Statue.");
@@ -745,6 +742,9 @@ function dungeonTraps() {
     alert("Bhaal.");
     alert("That's ... not good.");
     // Cursed?
+  } else if (diceRoll >= 8 && diceRoll < 12) {
+    alert("A fireball explodes in the middle of the room. The party manages to partly take cover, but is still burned.");
+    dungeonFight();
   } else if (diceRoll >= 12 && diceRoll < 16) {
 
   } else if (diceRoll >= 16 && diceRoll < 20) {
