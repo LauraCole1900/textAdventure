@@ -741,7 +741,11 @@ function dungeonTraps() {
     alert("OK, OK, I'll look.");
     alert("Bhaal.");
     alert("That's ... not good.");
-    // Cursed?
+    alert("How do you know it's disarmed?");
+    alert("What happens if you're wrong?");
+    alert("Wait--!");
+    alert("The statue's eyes open and shine with a dull red light. A sepulchral voice intones unknown words.")
+    dungeonCursed();
   } else if (diceRoll >= 8 && diceRoll < 12) {
     alert("A fireball explodes in the middle of the room. The party manages to partly take cover, but is still burned.");
     dungeonFight();
@@ -757,6 +761,11 @@ function dungeonTraps() {
   } else {
 
   }
+}
+
+
+function dungeonCursed() {
+
 }
 
 
