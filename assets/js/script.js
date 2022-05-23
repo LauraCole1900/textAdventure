@@ -736,7 +736,7 @@ function dungeonTraps() {
   } else if (diceRoll >= 4 && diceRoll < 8) {
     alert("Are you sure you should be doing that?");
     alert("Ok, but HOW do you know what you're doing?");
-    alert("OK, I'll just be over here ... behind this ... um, fallen column? Statue? Statue.");
+    alert("OK, I'll just be over here ... behind this ... um, column? Statue? Statue.");
     alert("How should I know what it's a statue of? It's dark down here.");
     alert("OK, OK, I'll look.");
     alert("Bhaal.");
@@ -765,7 +765,19 @@ function dungeonTraps() {
 
 
 function dungeonCursed() {
+  alert("hTe odLr fO duMrer lhalS shePri ndA nI sHi omDo eH Shlal aSpnw A roSce fO altroM grenyoP");
+  dice();
+  if (diceRoll < 8) {
+    alert("You feel a burning sensation begin at your fingertips. It swiftly moves inwards, engulfing your body, but no flames are visible.");
+    alert("Nevertheless, cursed, you burn.");
+    alert("Game over");
+  } else if (diceRoll >= 8 && diceRoll <= 14) {
 
+  } else if (diceRoll > 14 && diceRoll < 20) {
+
+  } else if (diceRoll === 20) {
+
+  }
 }
 
 
