@@ -765,7 +765,7 @@ function dungeonTraps() {
 
 
 function dungeonCursed() {
-  alert("hTe odLr fO duMrer lhalS shePri ndA nI sHi omDo eH Shlal aSpnw A roSce fO altroM grenyoP");
+  alert("eros Tolfe rdM LPdahiurh e Shrl nai ha ons hndes ol awms phdli y oateo rpolng orcsaerf m");
   dice();
   if (diceRoll < 8) {
     alert("You feel a burning sensation begin at your fingertips. It swiftly moves inwards, engulfing your body, but no flames are visible.");
